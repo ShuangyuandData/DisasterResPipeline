@@ -4,6 +4,12 @@ Libraries:
 
 Motivation: Analyze a data set containing real messages that were sent during disaster events and create a machine learning pipeline to categorize these events so that the messages can be sent to an appropriate disaster relief agency.
 
+Descriptions of files:
+    1. data directory: the files related with data and ETL process
+    2. model directory: the files related with the classifier modeling
+    3. preparation directory: the files related with the pre-process
+    4. app directory: the files related with the web deployment
+
 ### Instructions:
 1. Run the following commands in the project's root directory to set up your database and model.
 
