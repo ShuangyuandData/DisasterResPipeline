@@ -22,6 +22,10 @@ def load_data(messages_filepath, categories_filepath):
     # convert column from string to numeric
         categories[column] = categories[column].astype(int)
         
+    # convert 2 in related to 1
+    
+    categories.replace(2,1,inplace =True)
+        
     df_drop=df.drop('categories',axis=1)
     
     df_con = pd.concat([df_drop, categories], axis=1)
