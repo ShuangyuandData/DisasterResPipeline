@@ -24,6 +24,10 @@ import pickle
 
 def load_data(database_filepath):
     
+    """
+    The function loads the data form sql database
+    """
+    
     enginepath='sqlite:///'+ database_filepath
     
     engine = create_engine(enginepath)
@@ -43,6 +47,10 @@ def load_data(database_filepath):
 
 
 def tokenize(text):
+    
+    """
+    The function used the tokenization to process the text data
+    """
         
     text = re.sub(r"[^a-zA-Z0-9]", " ", text)  # Punctuation Removal
     
@@ -62,6 +70,11 @@ def tokenize(text):
 
 
 def build_model():
+    
+    """
+    The function builds a machine learning pipeline with grid search
+    """
+    
     pipeline = Pipeline([
         ('vect',  CountVectorizer(tokenizer=tokenize)),
         ('tfidf', TfidfTransformer()),
@@ -82,8 +95,8 @@ def build_model():
 def evaluate_model(model, X_test, Y_test, category_names):
     
     """
-    
-    output f1 score, precision and recall for the test set
+    The function performs the evaluation for the model and 
+    outputs f1 score, precision and recall for the test set
     
     """
     Y_pred=model.predict(X_test)
@@ -99,6 +112,10 @@ def evaluate_model(model, X_test, Y_test, category_names):
 
 
 def save_model(model, model_filepath):
+    
+    """
+    The function saves the model as a pickle file
+    """
     
     modelfile=open(model_filepath,'wb')
     
