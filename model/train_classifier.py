@@ -84,7 +84,6 @@ def evaluate_model(model, X_test, Y_test, category_names):
     """
     
     output f1 score, precision and recall for the test set
-    for each category
     
     """
     Y_pred=model.predict(X_test)
@@ -93,9 +92,8 @@ def evaluate_model(model, X_test, Y_test, category_names):
     
     target_names=['0','1']
     
-    for a in category_names:
-        print("Evaluation for", a)
-        print(classification_report(Y_test[a], Y_pred2[a], target_names=target_names))
+    print('Evaluation for the model:')
+    print(classification_report(Y_test, Y_pred2, target_names=target_names))
         
     return None    
 
