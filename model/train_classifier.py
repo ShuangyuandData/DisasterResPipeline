@@ -79,8 +79,25 @@ def build_model():
 
 
 
-#def evaluate_model(model, X_test, Y_test, category_names):
-   #pass
+def evaluate_model(model, X_test, Y_test, category_names):
+    
+    """
+    
+    output f1 score, precision and recall for the test set
+    for each category
+    
+    """
+    Y_pred=model.predict(X_test)
+    
+    Y_pred2=pd.DataFrame(Y_pred, index=Y_pred[:,0], columns=category_names)
+    
+    target_names=['0','1']
+    
+    for a in category_names:
+        print("Evaluation for", a)
+        print(classification_report(Y_test[a], Y_pred2[a], target_names=target_names))
+        
+    return None    
 
 
 def save_model(model, model_filepath):
@@ -108,8 +125,8 @@ def main():
         model.fit(X_train, Y_train)
         
         print('Evaluating model...')
-        print('not available')
-        #evaluate_model(model, X_test, Y_test, category_names)
+        #print('not available')
+        evaluate_model(model, X_test, Y_test, category_names)
 
         print('Saving model...\n    MODEL: {}'.format(model_filepath))
         save_model(model, model_filepath)
