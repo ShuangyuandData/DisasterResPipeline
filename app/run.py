@@ -43,28 +43,40 @@ def index():
     genre_counts = df.groupby('genre').count()['message']
     genre_names = list(genre_counts.index)
     
+    categoryname=list(df.columns)[4:]
+    totalnum=[]
+    for cname in categoryname:
+        totalnum.append(sum(df[cname]==1))
+    
     # create visuals
     # TODO: Below is an example - modify to create your own visuals
-    graphs = [
-        {
-            'data': [
-                Bar(
-                    x=genre_names,
-                    y=genre_counts
+    graph_one = []
+    graph_one.append(
+        Bar(
+            x=genre_names,
+            y=genre_counts,
+        )
+    )
+    layout_one = dict(title = 'Distribution of Message Genres',
+                xaxis = dict(title = 'Genre',),
+                yaxis = dict(title = 'Count'),
                 )
-            ],
-
-            'layout': {
-                'title': 'Distribution of Message Genres',
-                'yaxis': {
-                    'title': "Count"
-                },
-                'xaxis': {
-                    'title': "Genre"
-                }
-            }
-        }
-    ]
+    
+    graph_two = []
+    graph_two.append(
+        Bar(
+            x=categoryname,
+            y=totalnum,
+        )
+    )
+    layout_two = dict(title = 'Distribution of Message Categories',
+                xaxis = dict(title = 'Category',),
+                yaxis = dict(title = 'Count'),
+                )
+    
+    graphs = []
+    graphs.append(dict(data=graph_one, layout=layout_one))
+    graphs.append(dict(data=graph_two, layout=layout_two))
     
     # encode plotly graphs in JSON
     ids = ["graph-{}".format(i) for i, _ in enumerate(graphs)]
