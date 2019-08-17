@@ -1,6 +1,11 @@
 # DisasterResPipeline
 
-Libraries:
+Libraries: None
+
+### Summary:
+This project analyze disaster data from Figure Eight to build a model for an API that classifies disaster messages.
+I build a web app where an emergency worker can input a new message and get classification results in 36 categories.
+The detailed methods include the ETL process, TF_IDF pipeline, randomforest classifier, and grid search.
 
 Motivation: Analyze a data set containing real messages that were sent during disaster events and create a machine learning pipeline to categorize these events so that the messages can be sent to an appropriate disaster relief agency.
 
@@ -21,4 +26,5 @@ Descriptions of files:
 2. Run the following command in the app's directory to run your web app.
     `python run.py`
 
-3. Go to http://0.0.0.0:3001/ (env|grep WORK, https://SPACEID-3001.SPACEDOMAIN)
+3. Go to http://0.0.0.0:3001/ (env | grep WORK, https://SPACEID-3001.SPACEDOMAIN)
+
