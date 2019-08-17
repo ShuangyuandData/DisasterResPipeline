@@ -28,3 +28,7 @@ Descriptions of files:
 
 3. Go to http://0.0.0.0:3001/ (env | grep WORK, https://SPACEID-3001.SPACEDOMAIN)
 
+### Results:
+![Image of result]
+(https://github.com/ShuangyuandData/DisasterResPipeline/blob/master/Result1.png)
+
