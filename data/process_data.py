@@ -4,6 +4,9 @@ import pandas as pd
 
 def load_data(messages_filepath, categories_filepath):
     
+    """
+    The function loads the data and performs the first preprocess e.g. merge
+    """
     messages=pd.read_csv(messages_filepath)
     categories=pd.read_csv(categories_filepath)
     
@@ -34,6 +37,10 @@ def load_data(messages_filepath, categories_filepath):
 
 
 def clean_data(df):
+    
+    """
+    The function removes duplicates in the data
+    """
 
     print(df.info, '1')
     
@@ -45,6 +52,10 @@ def clean_data(df):
 
 
 def save_data(df, database_filename):
+    
+    """
+    The function saves the clean data into an sqlite database
+    """
     
     database_filename2=database_filename[-19:-3]
     
