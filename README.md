@@ -3,9 +3,9 @@
 Libraries: None
 
 ### Summary:
-This project analyze disaster data from Figure Eight to build a model for an API that classifies disaster messages.
+This project analyzes disaster data from Figure Eight to build a model for an API that classifies disaster messages.
 I build a web app where an emergency worker can input a new message and get classification results in 36 categories.
-The detailed methods include the ETL process, TF_IDF pipeline, randomforest classifier, and grid search.
+The detailed methods include the ETL process, TF_IDF pipeline, random-forest classifier, and grid search.
 
 Motivation: Analyze a data set containing real messages that were sent during disaster events and create a machine learning pipeline to categorize these events so that the messages can be sent to an appropriate disaster relief agency.
 
